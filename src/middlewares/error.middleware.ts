@@ -4,9 +4,9 @@ import { ServerError } from '../errors/server.error'
 
 export default (
 	err: ServerError,
-	req: Request,
+	_req: Request,
 	res: Response,
-	next: NextFunction,
+	_next: NextFunction,
 ) => {
 	res
 		.json({

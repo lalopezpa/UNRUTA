@@ -1,4 +1,4 @@
-import usersData from "./usuariosData.json"
+import usersData from "./usuarios.data.json"
 import {user ,NonSensitiveInfoUser,newUser} from "../types"
 
 const users: Array<user> = usersData as  Array<user> //obligarlo a considerar el tipo

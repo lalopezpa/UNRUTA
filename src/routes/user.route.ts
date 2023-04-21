@@ -1,5 +1,5 @@
 import express  from 'express'
-import * as UNRutaService from '../services/UNRutaService'
+import * as UNRutaService from '../services/UNRuta.service'
 import { STATUS_CODES } from '../utils/constants'
 import toNewUser from '../utils/utils'
 

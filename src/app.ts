@@ -1,3 +1,5 @@
+//TODO: Revisar para que sirve esto :)
+
 // import cors from "cors";
 // import express, { Application } from "express";
 // import helmet from "helmet";
