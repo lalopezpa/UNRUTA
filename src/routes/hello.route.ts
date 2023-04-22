@@ -9,6 +9,6 @@ const router = express.Router();
 //router.get("/", asyncErrorMiddleware(helloController.hello));
 router.get('/', (_req: Request,res: Response) =>{
     console.log('Esta entrando al puerto!')
-    res.send("Entro prueba 2!")
+    res.send("Entro prueba!")
 })
 export default router;

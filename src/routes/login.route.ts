@@ -1,15 +1,11 @@
-import express  from 'express'
+import express, { Request, Response } from "express";
 //import * as UNRutaService from '../services/UNRuta.service'
 //import { STATUS_CODES } from '../utils/constants'
 
+const router = express.Router();
 
-const router = express.Router()
+router.get("/", (_req: Request, res: Response) => {
+	res.render("login", { titulo: "Página login" });
+});
 
-
-router.get('/',(_req,res)=>{
-    res.send('login')
-    
-})
-
-
-export default router
+export default router;

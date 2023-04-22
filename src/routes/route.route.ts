@@ -1,13 +1,11 @@
-import express  from 'express'
+import express from "express";
+import  routeControllers  from "../controllers/route.controller";
 //import * as UNRutaService from '../services/UNRuta.service'
 //import { STATUS_CODES } from '../utils/constants'
 
+const router = express.Router();
 
-const router = express.Router()
+router.get("/", routeControllers.readRoutes);
+router.post("/", routeControllers.createRoutes);
 
-router.get('/',(_req,res)=>{
-    res.send('route')
-    
-})
-
-export default router
+export default router;
