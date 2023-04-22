@@ -1,30 +1,12 @@
-import express, { Request, Response }   from 'express'
-import * as UNRutaService from '../services/UNRuta.service'
-import { STATUS_CODES } from '../utils/constants'
-import toNewUser from '../utils/utils'
+import express from 'express'
+import {readUsers,findById,addUser} from '../controllers/user.controller'
 
 const router = express.Router()
 
-router.get('/',(_req: Request,res: Response)=>{
-   res.send(UNRutaService.getEntriesWithoutSensitiveInfo())
-})
+router.get('/',readUsers)
 
-router.get('/:id',(req: Request,res: Response)=>{
-   const usuario = UNRutaService.findById(+req.params.id) //find by id 
-   return (usuario != null)
-    ? res.send(usuario)
-    : res.json(STATUS_CODES.NOT_FOUND)
-})
+router.get('/:id',findById)
 
-router.post('/',(req: Request,res: Response)=>{
-   try{
-      const newUser = toNewUser(req.body)
-      const userAdded = UNRutaService.addUser(newUser)
-      res.json(userAdded)
-   }catch(e){
-      res.json(STATUS_CODES.BAD_REQUEST)
-   }
-
-})
+router.post('/',addUser)
 
 export default router
