@@ -1,4 +1,5 @@
-import express from "express";
+import express, { Request, Response }  from "express";
+
 
 //import helloController from '../controllers/hello.controller'
 //import asyncErrorMiddleware from '../middlewares/error.middleware'
@@ -6,5 +7,8 @@ import express from "express";
 const router = express.Router();
 
 //router.get("/", asyncErrorMiddleware(helloController.hello));
-
+router.get('/', (_req: Request,res: Response) =>{
+    console.log('Esta entrando al puerto!')
+    res.send("Entro prueba 2!")
+})
 export default router;
