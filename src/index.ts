@@ -1,4 +1,6 @@
 import express from 'express'
+
+//routes
 import helloRoute from './routes/hello.route'
 import users from './routes/user.route'
 import login from './routes/login.route'
@@ -9,6 +11,12 @@ import route from './routes/route.route'
 import neighborhood from './routes/neighborhood.route'
 import registerRoute from './routes/registerRoute.route'
 
+//dotenv
+import dotenv from "dotenv"
+import "./db/db"
+
+dotenv.config()
+
 const app = express()
 //middleware que transforma  la req.body a un objeto json
 app.use(express.json()) 
@@ -16,7 +24,7 @@ app.use(express.json())
 //app.use(express.static("public"))
 //app.use(express.urlencoded({ extended: true }));
 
-const port = 3000
+const port = process.env.PORT ||3000
 
 
 app.use('/',helloRoute)
@@ -39,3 +47,6 @@ app.listen(port, () => {
 //     console.log(req.body) // undefined
 //     res.send('enviado')
 // })
+
+
+
